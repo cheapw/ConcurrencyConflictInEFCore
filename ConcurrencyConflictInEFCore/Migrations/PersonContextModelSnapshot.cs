@@ -26,8 +26,6 @@ namespace ConcurrencyConflictInEFCore.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("FirstName")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate()
                         .HasMaxLength(16);
 
                     b.Property<string>("Gender")
@@ -39,7 +37,9 @@ namespace ConcurrencyConflictInEFCore.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasMaxLength(12);
 
-                    b.Property<byte[]>("RowVersion");
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate();
 
                     b.HasKey("PersonId");
 

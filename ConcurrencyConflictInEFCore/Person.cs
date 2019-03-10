@@ -22,7 +22,7 @@ namespace ConcurrencyConflictInEFCore
         [StringLength(12)]
         [RegularExpression(@"^\d{3}-\d{3}-\d{4}$",ErrorMessage ="电话号码的格式不正确")]
         public string PhoneNumber { get; set; }
-        //[Timestamp]
+        [Timestamp]
         public byte[] RowVersion { get; set; }
     }
 }

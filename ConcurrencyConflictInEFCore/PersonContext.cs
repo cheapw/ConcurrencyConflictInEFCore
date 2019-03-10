@@ -19,7 +19,7 @@ namespace ConcurrencyConflictInEFCore
         {
             modelBuilder.Entity<Person>().ToTable("Person");
             //modelBuilder.Entity<Person>().Property(p => p.FirstName).IsConcurrencyToken();
-            modelBuilder.Entity<Person>().Property(p => p.FirstName).IsRowVersion();
+            //modelBuilder.Entity<Person>().Property(p => p.FirstName).IsRowVersion();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
